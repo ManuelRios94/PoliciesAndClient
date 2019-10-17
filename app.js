@@ -1,13 +1,13 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let cors = require('cors');
 
 // Routes
 
 
-var app = express();
+let app = express();
 
 app.use(cors());
 app.use(logger('dev'));
@@ -21,3 +21,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Use Routes
 
 module.exports = app;
+
