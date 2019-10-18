@@ -4,7 +4,10 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let cors = require('cors');
 
-// Routes
+// Routes Declarations
+
+let clientRoutes = require('./routes/Client/clientRoute');
+let policiesRoutes = require('./routes/Policies/policiesRoute');
 
 
 let app = express();
@@ -19,6 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use Routes
+
+app.use('/client', clientRoutes);
+app.use('/policies', policiesRoutes);
 
 module.exports = app;
 
