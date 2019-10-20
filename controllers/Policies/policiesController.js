@@ -16,7 +16,7 @@ const GetPoliciesListByClientName =  async (req, res) => {
                 res.status(BAD_REQUEST);
             }); 
         } else {
-            res.status(NOT_FOUND); 
+            res.status(NOT_FOUND).send("Client Not Found"); 
         }
        
     })
@@ -39,7 +39,7 @@ const GetClientByPolicieNumber = async (req, res) => {
                 res.status(OK).json(client); 
             })
             .catch(() => {
-                res.status(BAD_REQUEST);
+                res.status(BAD_REQUEST).send("Policie Not Found");
             });
         } else {
             res.status(NOT_FOUND);

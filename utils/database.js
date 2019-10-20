@@ -17,6 +17,24 @@ const getClients =  () => {
     
 }
 
+const getClientRole =  (id) => {
+    return new Promise((resolve, reject) => {
+        fetch(URL_CLIENTS)
+        .then((response) => {
+            return response.json();
+        })
+        .catch((err) => {
+            reject(err);
+        })
+        .then((myJson) => {
+            const clients = myJson.clients;
+            const client = clients.filter(clients => clients.id === id);
+            resolve(client[0].role);
+        });
+    });
+    
+}
+
 
 const getPolicies = async () => {
     return new Promise((resolve,reject) => {
@@ -35,5 +53,6 @@ const getPolicies = async () => {
 
 module.exports = {
     getClients,
-    getPolicies
+    getPolicies,
+    getClientRole
 }

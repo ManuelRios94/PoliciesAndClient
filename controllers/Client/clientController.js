@@ -9,7 +9,7 @@ const GetClientById = async (req, res) => {
         if(result !== []){
             res.status(OK).json(result); 
         } else {
-            res.status(NOT_FOUND); 
+            res.status(NOT_FOUND).send("Client Not Found");
         } 
     })
     .catch(() => {
@@ -25,7 +25,7 @@ const GetClientByName = async (req, res) => {
         if(result !== []){
             res.status(OK).json(result); 
         } else {
-            res.status(NOT_FOUND); 
+            res.status(NOT_FOUND).send("Client Not Found");
         }
     })
     .catch(() => {
