@@ -9,7 +9,6 @@ let cors = require('cors');
 let clientRoutes = require('./routes/Client/clientRoute');
 let policiesRoutes = require('./routes/Policies/policiesRoute');
 
-
 let app = express();
 
 app.use(cors());

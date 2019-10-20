@@ -15,4 +15,6 @@ Technical Notes:
 
 - I decided to always consult the API (Url Clients and Policies), in case it changes the data in the future.
 
+- I assume that the id and name of the customer data are a unique identifier
+
 
