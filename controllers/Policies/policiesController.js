@@ -5,7 +5,7 @@ const GetPoliciesListByClientName =  async (req, res) => {
     const clientName = req.params.name;
     await getClients()
     .then(async (clients) => {
-        const client = clients.filter(clients => clients.clientName === clientName);
+        const client = clients.filter(clients => clients.name === clientName);
         if(client !== []){
             await getPolicies()
             .then((policies) => {
